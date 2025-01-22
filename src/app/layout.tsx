@@ -1,6 +1,14 @@
 import { SolanaProvider } from "@/components/solana/solana-provider";
-import "./globals.css";
+import "@mantine/core/styles.css";
 import { ReactQueryProvider } from "../components/global/react-query-provider";
+import "./globals.css";
+
+import { theme } from "@/config/mantine";
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from "@mantine/core";
 
 export const metadata = {
   title: "Placeholder",
@@ -13,10 +21,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" {...mantineHtmlProps}>
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
         <ReactQueryProvider>
-          <SolanaProvider>{children}</SolanaProvider>
+          <SolanaProvider>
+            <body>
+              <MantineProvider theme={theme} forceColorScheme="dark">
+                {children}
+              </MantineProvider>
+            </body>
+          </SolanaProvider>
         </ReactQueryProvider>
       </body>
     </html>
