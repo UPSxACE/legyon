@@ -1,6 +1,6 @@
-import { SolanaProvider } from "@/components/solana/solana-provider";
+import { SolanaProvider } from "@/components/solana/SolanaProvider";
 import "@mantine/core/styles.css";
-import { ReactQueryProvider } from "../components/global/react-query-provider";
+import { ReactQueryProvider } from "../components/global/ReactQueryProvider";
 import "./globals.css";
 
 import { theme } from "@/config/mantine";
@@ -30,13 +30,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.className} {...mantineHtmlProps}>
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark" />
       </head>
       <body>
         <ReactQueryProvider>
           <SolanaProvider>
             <body>
-              <MantineProvider theme={theme} forceColorScheme="dark">
+              <MantineProvider
+                theme={theme}
+                defaultColorScheme="dark"
+                forceColorScheme="dark"
+              >
                 {children}
               </MantineProvider>
             </body>

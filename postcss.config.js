@@ -1,6 +1,11 @@
 module.exports = {
   plugins: {
+    "postcss-mixins": {
+      mixinsFiles: ["src/config/mixins.css"],
+      // mixinsFiles: ["src/config/mixins/**/*.css"],
+    },
     "postcss-preset-mantine": {},
+    "postcss-nested": {},
     "postcss-simple-vars": {
       variables: {
         "mantine-breakpoint-xs": "36em",
@@ -10,5 +15,7 @@ module.exports = {
         "mantine-breakpoint-xl": "88em",
       },
     },
+    autoprefixer: {},
+    "postcss-flexbugs-fixes": {},
   },
 };
