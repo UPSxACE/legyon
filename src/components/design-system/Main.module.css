@@ -1,0 +1,4 @@
+.main {
+    background-color: var(--legyon-dark-2);
+    min-height: calc(100svh - var(--legyon-header-h));
+}

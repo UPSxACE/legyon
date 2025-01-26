@@ -1,0 +1,35 @@
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--legyon-gray-1);
+    padding: 4px 16px;
+    border-bottom: 1px solid var(--legyon-border);
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+
+    &.selected {
+        border-right-color: var(--legyon-border);
+        &:not(:first-of-type){
+            border-left-color: var(--legyon-border);
+        }
+    }
+
+    &.selected, &:hover:not(.disabled) {
+        color: white;
+        background-color: var(--legyon-dark-2);
+        border-bottom-color: transparent;
+    }
+
+    &.disabled {
+        color: var(--legyon-gray-4);
+        cursor: initial;
+    }
+}
+
+.link {
+    font-weight: 400;
+    text-transform: uppercase;
+}

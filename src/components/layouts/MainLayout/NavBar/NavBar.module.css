@@ -1,0 +1,63 @@
+.stickyWrapper {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    min-height: var(--legyon-header-h);
+    background-color: var(--legyon-dark-3);
+    flex-wrap: wrap;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--legyon-border);
+    @mixin lg {
+        padding: 0;
+        border-bottom: 0;
+    }
+}
+
+.branding {
+    padding-left: var(--legyon-layout-space-x);
+    display: flex;
+    align-items: center;
+    @mixin lg {
+        border-bottom: 1px solid var(--legyon-border);
+        border-right: 1px solid var(--legyon-border);
+    }
+}
+
+.logoWrapper {
+    margin-bottom: 0.35rem;
+    margin-right: var(--legyon-layout-space-x);
+    @mixin lg {
+        width: calc(220px - var(--legyon-layout-space-x));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.logo {
+    font-size: 2.2rem
+}
+
+.profileMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: var(--legyon-layout-space-x);
+    flex: 1;
+    @mixin lg {
+        border-bottom: 1px solid var(--legyon-border);
+    }
+}
+
+.hamburger {
+    margin-left: auto;
+    @mixin lg {
+        display: none;
+    }
+}

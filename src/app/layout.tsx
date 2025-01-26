@@ -1,16 +1,16 @@
+import MainLayout from "@/components/layouts/MainLayout";
 import { SolanaProvider } from "@/components/solana/SolanaProvider";
-import "@mantine/core/styles.css";
-import { ReactQueryProvider } from "../components/global/ReactQueryProvider";
-import "./globals.css";
-
 import { theme } from "@/config/mantine";
 import {
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
 } from "@mantine/core";
-
+import "@mantine/core/styles.css";
 import { Roboto } from "next/font/google";
+import ReactQueryProvider from "../components/global/ReactQueryProvider";
+
+import "./globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -41,7 +41,7 @@ export default function RootLayout({
                 defaultColorScheme="dark"
                 forceColorScheme="dark"
               >
-                {children}
+                <MainLayout>{children}</MainLayout>
               </MantineProvider>
             </body>
           </SolanaProvider>

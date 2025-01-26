@@ -1,0 +1,21 @@
+.menuItem {
+    padding: 16px var(--legyon-layout-space-x);
+    display: flex;
+    align-items: center;
+    color: var(--legyon-gray-1);
+    &.selected, &:hover:not(.disabled) {
+        color: white;
+    }
+    &.disabled {
+        color: var(--legyon-gray-4);
+    }
+}
+
+.icon {
+    display: flex;
+    margin-right: 12px;
+}
+
+.cta {
+    margin-left: auto;
+}
