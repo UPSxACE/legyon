@@ -1,0 +1,6 @@
+.root {
+    background-color: var(--legyon-dark-5);
+    &:hover {
+        background-color: var(--legyon-dark-7);
+    }
+}

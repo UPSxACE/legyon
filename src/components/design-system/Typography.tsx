@@ -3,7 +3,7 @@ import React, { ComponentProps } from "react";
 
 export default function Typography<T extends React.ElementType>({
   component,
-  variant = "body1",
+  variant = "body2",
   className,
   level,
   ...props
@@ -49,5 +49,5 @@ type BaseProps<T extends React.ElementType> = {
   level?: "0" | "1" | "2" | "3" | "4" | "5" | "6";
 };
 
-type TypographyProps<T extends React.ElementType> = BaseProps<T> &
+export type TypographyProps<T extends React.ElementType> = BaseProps<T> &
   Omit<ComponentProps<T>, keyof BaseProps<T>>;
